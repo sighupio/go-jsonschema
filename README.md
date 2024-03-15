@@ -85,6 +85,14 @@ properly handles them.
 
 While not finished, go-jsonschema can be used today. Aside from some minor features, only specific validations remain to be fully implemented.
 
+## Release
+
+When releasing a new version, a problem may occur when running `make release`, to fix this, run the following command:
+
+```shell
+$ docker buildx create --bootstrap --use
+```
+
 ### Validation
 
 - Core ([RFC draft](http://json-schema.org/latest/json-schema-core.html))
