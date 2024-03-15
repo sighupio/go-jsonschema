@@ -1,4 +1,4 @@
-module github.com/atombender/go-jsonschema
+module github.com/sighupio/go-jsonschema
 
 go 1.21
 

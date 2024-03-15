@@ -3,7 +3,7 @@ package generator
 import (
 	"strings"
 
-	"github.com/atombender/go-jsonschema/pkg/codegen"
+	"github.com/sighupio/go-jsonschema/pkg/codegen"
 )
 
 const (
