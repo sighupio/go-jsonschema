@@ -36,19 +36,19 @@ release:
     name: go-jsonschema
   name_template: "{{ .Tag }}"
   prerelease: auto
-# brews:
-#   - name: go-jsonschema
-#     repository:
-#       owner: sighupio
-#       name: homebrew-go-jsonschema
-#     skip_upload: auto
-#     folder: Formula
-#     homepage: "https://gihub.com/sighupio/go-jsonschema"
-#     description: "go-jsonschema binary"
-#     test: |
-#       system "#{bin}/go-jsonschema"
-#     install: |
-#       bin.install 'go-jsonschema'
+brews:
+  - name: go-jsonschema
+    repository:
+      owner: sighupio
+      name: homebrew-go-jsonschema
+    skip_upload: auto
+    folder: Formula
+    homepage: "https://gihub.com/sighupio/go-jsonschema"
+    description: "go-jsonschema binary"
+    test: |
+      system "#{bin}/go-jsonschema"
+    install: |
+      bin.install 'go-jsonschema'
 dockers:
   - skip_push: auto
     use: buildx
