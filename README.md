@@ -31,7 +31,7 @@ $ go install github.com/sighupio/go-jsonschema@latest
 
 ```shell
 $ brew tap sighupio/go-jsonschema
-$ brew install go-jsonschema
+$ brew install sighupio/go-jsonschema/go-jsonschema
 ```
 
 ## Contributing
