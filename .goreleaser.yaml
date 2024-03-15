@@ -32,18 +32,18 @@ changelog:
       - "^test:"
 release:
   github:
-    owner: omissis
+    owner: sighupio
     name: go-jsonschema
   name_template: "{{ .Tag }}"
   prerelease: auto
 brews:
   - name: go-jsonschema
     repository:
-      owner: omissis
+      owner: sighupio
       name: homebrew-go-jsonschema
     skip_upload: auto
     folder: Formula
-    homepage: "https://gihub.com/omissis/go-jsonschema"
+    homepage: "https://gihub.com/sighupio/go-jsonschema"
     description: "go-jsonschema binary"
     test: |
       system "#{bin}/go-jsonschema"
@@ -53,7 +53,7 @@ dockers:
   - skip_push: auto
     use: buildx
     image_templates:
-      - "omissis/go-jsonschema:{{ .Version }}-amd64"
+      - "sighupio/go-jsonschema:{{ .Version }}-amd64"
     build_flag_templates:
       - "--target=go-jsonschema"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -65,7 +65,7 @@ dockers:
   - skip_push: auto
     use: buildx
     image_templates:
-      - "omissis/go-jsonschema:{{ .Version }}-arm64v8"
+      - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
     build_flag_templates:
       - "--target=go-jsonschema"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -76,22 +76,22 @@ dockers:
     goarch: arm64
 docker_manifests:
 - skip_push: auto
-  name_template: "omissis/go-jsonschema:latest"
+  name_template: "sighupio/go-jsonschema:latest"
   image_templates:
-  - "omissis/go-jsonschema:{{ .Version }}-amd64"
-  - "omissis/go-jsonschema:{{ .Version }}-arm64v8"
+  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
+  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "omissis/go-jsonschema:{{ .Major }}"
+  name_template: "sighupio/go-jsonschema:{{ .Major }}"
   image_templates:
-  - "omissis/go-jsonschema:{{ .Version }}-amd64"
-  - "omissis/go-jsonschema:{{ .Version }}-arm64v8"
+  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
+  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "omissis/go-jsonschema:{{ .Major }}.{{ .Minor }}"
+  name_template: "sighupio/go-jsonschema:{{ .Major }}.{{ .Minor }}"
   image_templates:
-  - "omissis/go-jsonschema:{{ .Version }}-amd64"
-  - "omissis/go-jsonschema:{{ .Version }}-arm64v8"
+  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
+  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "omissis/go-jsonschema:{{ .Version }}"
+  name_template: "sighupio/go-jsonschema:{{ .Version }}"
   image_templates:
-  - "omissis/go-jsonschema:{{ .Version }}-amd64"
-  - "omissis/go-jsonschema:{{ .Version }}-arm64v8"
+  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
+  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"

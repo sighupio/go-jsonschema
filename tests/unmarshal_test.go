@@ -7,7 +7,7 @@ import (
 	"github.com/magiconair/properties/assert"
 	yamlv3 "gopkg.in/yaml.v3"
 
-	test "github.com/atombender/go-jsonschema/tests/data/extraImports/gopkgYAMLv3"
+	test "github.com/sighupio/go-jsonschema/tests/data/extraImports/gopkgYAMLv3"
 )
 
 func TestYamlV3Unmarshal(t *testing.T) {

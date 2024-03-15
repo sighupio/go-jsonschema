@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/atombender/go-jsonschema/pkg/generator"
+	"github.com/sighupio/go-jsonschema/pkg/generator"
 )
 
 const (

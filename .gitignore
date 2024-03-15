@@ -1,6 +1,7 @@
 .env
 .envrc
 .idea
+.vscode
 coverage.out
 coverage/
 bin/

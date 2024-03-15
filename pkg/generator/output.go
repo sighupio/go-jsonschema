@@ -3,8 +3,8 @@ package generator
 import (
 	"fmt"
 
-	"github.com/atombender/go-jsonschema/pkg/codegen"
-	"github.com/atombender/go-jsonschema/pkg/schemas"
+	"github.com/sighupio/go-jsonschema/pkg/codegen"
+	"github.com/sighupio/go-jsonschema/pkg/schemas"
 )
 
 type output struct {

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/atombender/go-jsonschema/pkg/generator"
+	"github.com/sighupio/go-jsonschema/pkg/generator"
 )
 
 var (
@@ -55,12 +55,12 @@ func TestCrossPackage(t *testing.T) {
 	cfg.SchemaMappings = []generator.SchemaMapping{
 		{
 			SchemaID:    "https://example.com/schema",
-			PackageName: "github.com/atombender/go-jsonschema/tests/helpers/schema",
+			PackageName: "github.com/sighupio/go-jsonschema/tests/helpers/schema",
 			OutputName:  "schema.go",
 		},
 		{
 			SchemaID:    "https://example.com/other",
-			PackageName: "github.com/atombender/go-jsonschema/tests/data/crossPackage/other",
+			PackageName: "github.com/sighupio/go-jsonschema/tests/data/crossPackage/other",
 			OutputName:  "../other/other.go",
 		},
 	}
@@ -74,12 +74,12 @@ func TestCrossPackageNoOutput(t *testing.T) {
 	cfg.SchemaMappings = []generator.SchemaMapping{
 		{
 			SchemaID:    "https://example.com/schema",
-			PackageName: "github.com/atombender/go-jsonschema/tests/helpers/schema",
+			PackageName: "github.com/sighupio/go-jsonschema/tests/helpers/schema",
 			OutputName:  "schema.go",
 		},
 		{
 			SchemaID:    "https://example.com/other",
-			PackageName: "github.com/atombender/go-jsonschema/tests/helpers/other",
+			PackageName: "github.com/sighupio/go-jsonschema/tests/helpers/other",
 		},
 	}
 	testExampleFile(t, cfg, "./data/crossPackageNoOutput/schema/schema.json")

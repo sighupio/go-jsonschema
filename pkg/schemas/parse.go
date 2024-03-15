@@ -8,7 +8,7 @@ import (
 
 	"github.com/goccy/go-yaml"
 
-	"github.com/atombender/go-jsonschema/pkg/yamlutils"
+	"github.com/sighupio/go-jsonschema/pkg/yamlutils"
 )
 
 func FromJSONFile(fileName string) (*Schema, error) {
