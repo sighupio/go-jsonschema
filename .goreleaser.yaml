@@ -53,7 +53,7 @@ dockers:
   - skip_push: auto
     use: buildx
     image_templates:
-      - "sighupio/go-jsonschema:{{ .Version }}-amd64"
+      - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-amd64"
     build_flag_templates:
       - "--target=go-jsonschema"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -65,7 +65,7 @@ dockers:
   - skip_push: auto
     use: buildx
     image_templates:
-      - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
+      - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-arm64v8"
     build_flag_templates:
       - "--target=go-jsonschema"
       - "--label=org.opencontainers.image.created={{.Date}}"
@@ -76,22 +76,22 @@ dockers:
     goarch: arm64
 docker_manifests:
 - skip_push: auto
-  name_template: "sighupio/go-jsonschema:latest"
+  name_template: "registry.sighup.io/fury/go-jsonschema:latest"
   image_templates:
-  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
-  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-amd64"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "sighupio/go-jsonschema:{{ .Major }}"
+  name_template: "registry.sighup.io/fury/go-jsonschema:{{ .Major }}"
   image_templates:
-  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
-  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-amd64"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "sighupio/go-jsonschema:{{ .Major }}.{{ .Minor }}"
+  name_template: "registry.sighup.io/fury/go-jsonschema:{{ .Major }}.{{ .Minor }}"
   image_templates:
-  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
-  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-amd64"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-arm64v8"
 - skip_push: auto
-  name_template: "sighupio/go-jsonschema:{{ .Version }}"
+  name_template: "registry.sighup.io/fury/go-jsonschema:{{ .Version }}"
   image_templates:
-  - "sighupio/go-jsonschema:{{ .Version }}-amd64"
-  - "sighupio/go-jsonschema:{{ .Version }}-arm64v8"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-amd64"
+  - "registry.sighup.io/fury/go-jsonschema:{{ .Version }}-arm64v8"
