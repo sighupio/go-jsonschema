@@ -9,6 +9,7 @@ require (
 	github.com/sanity-io/litter v1.5.5
 	github.com/spf13/cobra v1.8.0
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (

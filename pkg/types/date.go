@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"strings"
 	"time"
+
+	"gopkg.in/yaml.v3"
 )
 
 var ErrDateNotJSONString = errors.New("cannot parse non-string value as a date")
@@ -13,12 +15,24 @@ type SerializableDate struct {
 	time.Time
 }
 
-func (date SerializableDate) MarshalJSON() ([]byte, error) {
-	return []byte("\"" + date.Format(time.DateOnly) + "\""), nil
+func (d *SerializableDate) MarshalJSON() ([]byte, error) {
+	return []byte("\"" + d.Format(time.DateOnly) + "\""), nil
 }
 
-func (date *SerializableDate) UnmarshalJSON(data []byte) error {
+func (d *SerializableDate) parse(date string) error {
+	parsedDate, err := time.Parse(time.DateOnly, date)
+	if err != nil {
+		return fmt.Errorf("unable to parse date from JSON: %w", err)
+	}
+
+	d.Time = parsedDate
+
+	return nil
+}
+
+func (d *SerializableDate) UnmarshalJSON(data []byte) error {
 	stringifiedData := string(data)
+
 	if stringifiedData == "null" {
 		return nil
 	}
@@ -29,12 +43,9 @@ func (date *SerializableDate) UnmarshalJSON(data []byte) error {
 
 	dataWithoutQuotes := stringifiedData[1 : len(stringifiedData)-1]
 
-	parsedDate, err := time.Parse(time.DateOnly, dataWithoutQuotes)
-	if err != nil {
-		return fmt.Errorf("unable to parse date from JSON: %w", err)
-	}
+	return d.parse(dataWithoutQuotes)
+}
 
-	date.Time = parsedDate
-
-	return nil
+func (d *SerializableDate) UnmarshalYAML(value *yaml.Node) error {
+	return d.parse(value.Value)
 }
