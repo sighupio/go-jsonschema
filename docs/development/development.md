@@ -79,6 +79,10 @@ func (j *ExampleSchema) UnmarshalJSON(b []byte) error {
   
 Perform upstream merges, fix any conflicts, and repeat.
 
+The upstream repository it's https://github.com/omissis/go-jsonschema, actively mantained by the developer.
+
+Please note that we have renamed the go module to `github.com/sighupio/go-jsonschema` and made some modifications to `pkg/types/date.go` to support `UnmarshalYAML` on furyctl so the merge from the upstram will have conflicts.
+
 </details>
 
 ---
@@ -89,4 +93,7 @@ Perform upstream merges, fix any conflicts, and repeat.
   <summary>Answer</summary>
   
 The project is developed using the standard Go tools, and testing is done using a test JSONSchema.
+
+For example you can use vscode by configuring it to debug Go code or you can simple compile the project with `go build .` and test the executable directly.
+
 </details>
